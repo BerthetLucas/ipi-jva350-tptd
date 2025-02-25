@@ -1,37 +1,5 @@
 # TD et TP IPI JVA350 Qualité logicielle
 
-## Pré-requis
-
-- Avoir installé un IDE :
-  - IntelliJ Ultimate, avec votre adresse IPI sur Jetbrains Student à https://www.jetbrains.com/student/
-  - sinon Eclipse, à https://www.eclipse.org/downloads/packages/release/2022-09/r/eclipse-ide-java-developers
-- Savoir utiliser Git et les branches (utilisez les capacités Git de votre IDE ou installez-le séparément depuis
-https://git-scm.com/download/win ). Quelques liens :
-  - https://learngitbranching.js.org/
-  - https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
-- Avoir un compte Github. Voici comment y configurer l'authentification de git par clé SSH :
-  - https://docs.github.com/en/authentication/connecting-to-github-with-ssh
-  - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
-- Connaître les bases du développement Java avec Maven (la persistence avec JPA est également utilisée ponctuellement),
-  et au moins comment importer et compiler un projet Java dans l'IDE :
-  - IntelliJ :
-    - Installation de Git : Git > git not installed > Donwload and install
-    - Cloner un projet Github : Git > Clone
-    - Configuration d'un projet Maven : clic droit sur pom.xml > Add as Maven project ou bien voir IV-B-2 à https://damienrieu.developpez.com/tutoriel/java/nouveautes-intellij-12/?page=page_1
-    - Installation de Java : par exemple
-      - erreur ne trouve pas le symbol "java" : clic droit sur pom.xml > Build > sur Setup DSK choisir Configure > choisir Download et install
-      - "Error running..." : Project JDK is not specified > Configure... > no SDK > Add SDK > Download
-    - lancer un build maven complet : Run > Edit configurations > Maven > Create configuration > mettre Working directory au dossier du projet et dans Command line, écrire : clean install
-    - problème de sécurisation de connexion :
-    (Maven error : unable to find valid certification path to requested targetmaven unable to find valid certification path to requested target
-    ou
-    unable to access 'https://github.com/mdutoo/ipi-jva350-tptd.git/': SSL certificate problem: unable to get local issuer certificate)
-    mvn clean package -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true
-    ou dans IntelliJ Run > Edit Configurations > Java Options (sans -D) : maven.wagon.http.ssl.insecure=true maven.wagon.http.ssl.allowall=true
-    comme dit à https://stackoverflow.com/questions/45612814/maven-error-pkix-path-building-failed-unable-to-find-valid-certification-path
-  - sinon Eclipse : voir https://thierry-leriche-dessirier.developpez.com/tutoriels/java/importer-projet-maven-dans-eclipse-5-min/
-
-
 ## TD
 
 ### Plateforme d'intégration continue
