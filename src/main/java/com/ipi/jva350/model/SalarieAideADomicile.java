@@ -20,7 +20,7 @@ public class SalarieAideADomicile {
 
     private String nom;
 
-    public static List<DayOfWeek> joursHabituellementTravailles = new ArrayList<DayOfWeek>();
+    public static List<DayOfWeek> joursHabituellementTravailles = new ArrayList<>();
 
     static {
         joursHabituellementTravailles.add(DayOfWeek.MONDAY);
