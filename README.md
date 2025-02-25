@@ -24,6 +24,8 @@
 
 Le premier rapport Sonar indique...
 
+Le rapport indique 4 erreurs de code smell, c'est à dire que le code ne respect pas des bonne pratiques 
+et devrait être corrigés. En corrigeant une erreur selon les recommandations ont peut régler les différentes erreurs. 
 
 ### Tests unitaires
 
