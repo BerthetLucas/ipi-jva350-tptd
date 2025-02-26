@@ -72,7 +72,7 @@ public class SalarieAideADomicile {
      * @return
      */
     public boolean aLegalementDroitADesCongesPayes() {
-        return this.getJoursTravaillesAnneeNMoins1() > 10;
+        return this.getJoursTravaillesAnneeNMoins1() >= 10;
     }
 
     /**
@@ -87,13 +87,15 @@ public class SalarieAideADomicile {
             return joursDeCongeDecomptes;
         }
 
-        LocalDate dernierJourDeCongePris = this.getCongesPayesPris().isEmpty() ? null
+        LocalDate dernierJourDeCongePris = this.getCongesPayesPris().isEmpty()
+                ? null
                 : this.getCongesPayesPris().stream().reduce((first, second) -> second).get();
 
         dateDebut = (dernierJourDeCongePris == null || dernierJourDeCongePris.isAfter(dateDebut)) ?
                 dateDebut : dateDebut.plusDays(1);
 
         LocalDate jour = dateDebut;
+
         if (dateDebut.getDayOfWeek().getValue() != DayOfWeek.SUNDAY.getValue()
                     && !Entreprise.estJourFerie(dateDebut) && estHabituellementTravaille(dateDebut)) {
             joursDeCongeDecomptes.add(dateDebut);
